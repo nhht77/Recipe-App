@@ -10,7 +10,7 @@ class Recipe extends Component {
     return (
         <div className="recipe-card">
         <div className="recipe-img-desc">
-            <img src={image} alt={title} className="recipe-img" />
+            <img src={image} alt={title} />
         </div>
         <div className="recipe-content">
             <h2 className="recipe-title">{title}</h2>
