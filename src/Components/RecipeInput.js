@@ -3,14 +3,18 @@ import './RecipeInput.css';
 
 
 class RecipeInput extends Component {
-  constructor(props){
-      super(props);
-      this.state={
-          title:"",
-          instruction:"",
-          ingredients:[""],
-          image:""
-      }
+    static defaultProps = {
+        onSave() {}
+        }
+
+    constructor(props){
+        super(props);
+        this.state={
+            title:"",
+            instruction:"",
+            ingredients:[""],
+            image:""
+        }
 
       this.handleChange = this.handleChange.bind(this);
       this.handleChangeIng = this.handleChangeIng.bind(this);
@@ -52,38 +56,42 @@ class RecipeInput extends Component {
           return (
            <div>
             <label>
-            {i+1}
-                <input 
-                type="text"
-                name={`ingredient-${i}`}
-                value={ing} 
-                onChange={this.handleChangeIng} />
+            {i+1 }.  
             </label>
+            <input 
+            type="text"
+            name={`ingredient-${i}`}
+            value={ing} 
+            onChange={this.handleChangeIng} />
            </div>
           );
       })
       return (
-        <form onSubmit={this.handleSubmit}>
-        
+        <div className="recipe-form-container">   
+        <form className="recipe-form" onSubmit={this.handleSubmit}>
+            <button
+                type="button"
+                className="close-button">
+                X
+            </button>
+
             <div className="form-group">
-            <label>Title:
-                <input type="text" name="title" onChange={this.handleChange} value={title} />
-            </label>
+            <label>Title:</label>
+            <input type="text" name="title" onChange={this.handleChange} value={title} />
             </div>
             
             <div className="form-group">
-            <label>Image:
+            <label>Image:</label>
             <input type="text" name="image" onChange={this.handleChange} value={image} />
-            </label>
             </div>
             
             <div className="form-group">
-            <label>Instruction:
-                <textarea type="text" name="instruction" onChange={this.handleChange} value={instruction} />
-            </label>
+            <label>Instruction:</label>
+            <textarea type="text" name="instruction" onChange={this.handleChange} value={instruction} />
             </div>
             
             <div className="form-group">
+            <label>Ingredients:</label>
             {input}
             </div>
 
@@ -91,16 +99,16 @@ class RecipeInput extends Component {
             <button
             type="button"
             onClick={this.handleNewIngredient}
-            className="buttons"
-            >
-                +
+            className="buttons">
+            +
             </button>
             </div>
 
             <div className="form-group">
-                <input type="submit" value="Submit" />
+                <input className="buttons" type="submit" value="Submit" />
             </div>
         </form>
+        </div>   
       );
   }
 }

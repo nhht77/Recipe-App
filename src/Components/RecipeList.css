@@ -1,5 +1,6 @@
 .recipe-list {
-    display:flex
+    display:flex;
+    flex-wrap: wrap;
 }
 
 @media(max-width: 960px){

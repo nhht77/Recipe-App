@@ -4,8 +4,6 @@ import './RecipeList.css';
 
 import Recipe from './Recipe';
 
-
-
 class RecipeList extends Component {
   
   static PropTypes = {
@@ -13,12 +11,12 @@ class RecipeList extends Component {
   }
 
   render() {
-    const recipe = this.props.recipes.map( (r, idx) => {
-        return <Recipe key={r.id} {...r}/>
-    })
+    const recipes = this.props.recipes.map((r,index) => (
+      <Recipe key={r.id} {...r} />
+    ));
     return (
       <div className="recipe-list">
-        {recipe}
+        {recipes}
       </div>
     );
   }

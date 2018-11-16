@@ -41,8 +41,8 @@ class RecipeApp extends Component {
     this.setState((prevState, props) => {
       const newRecipe = {...recipe, id: this.state.nextRecipeId};
         return {
-          nextRecipeId: this.state.nextRecipeId + 1,
-          recipe: {...this.state.recipe, newRecipe}
+          nextRecipeId: prevState.nextRecipeId + 1,
+          recipe: [...this.state.recipe, newRecipe]
       }
     });
   }
