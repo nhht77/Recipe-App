@@ -14,16 +14,15 @@
       text-align: center;
       box-sizing: border-box;
       border:none;
+      margin-bottom: .5rem;
       border-bottom: 1px solid #8F6C6C;
       transition: all .3s;
-      margin: 1rem;
   }
   
   .recipe-form input:focus {
     box-sizing: border-box;
     border:none;
     border-bottom: 1px solid #634444;
-    margin: 1rem;
     outline: none;
 }
 
@@ -46,11 +45,19 @@
     color: white;
     background-color: #8F6C6C;
     border-radius: 6px;
-    padding: 0 10px 1px 10px;
-    margin: 8px 0;
     align-self: flex-end;
+    padding: .2rem 2rem;
+    width: 14rem;
     font-size: 1.1em;
-    border: none;
+    border: 1px solid transparent;
+    transition: all .2s;
+    outline: none;
+  }
+
+  .buttons:hover {
+    color: #8F6C6C;
+    background-color: #fff;
+    border: 1px solid #8F6C6C;
   }
   
   .close-button {

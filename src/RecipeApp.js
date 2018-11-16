@@ -36,6 +36,7 @@ class RecipeApp extends Component {
       showForm: false
     }
     this.handleSave = this.handleSave.bind(this);
+    this.onDelete = this.onDelete.bind(this);
   }
 
   handleSave(recipe){
@@ -48,6 +49,11 @@ class RecipeApp extends Component {
     });
   }
 
+  onDelete(id){
+    const recipe = this.state.recipe.filter( r => r.id !== id );
+    this.setState({recipe})
+  }
+
   render() {
     const { showForm } = this.state; 
     
@@ -55,7 +61,7 @@ class RecipeApp extends Component {
       <div className="App">
         <NavBar onNewRecipe={() => this.setState({showForm:true})}/>
         { showForm ? <RecipeInput onSave={this.handleSave} onClose={() => this.setState({showForm:false})}/> : null}
-        <RecipeList recipes={this.state.recipe}/>
+        <RecipeList onDelete={this.onDelete} recipes={this.state.recipe}/>
       </div>
     );
   }

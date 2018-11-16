@@ -106,7 +106,7 @@ class RecipeInput extends Component {
             </div>
 
             <div className="form-group">
-                <input className="buttons" type="submit" value="Submit" />
+                <button className="buttons" type="submit"> Submit </button>
             </div>
         </form>
         </div>   
