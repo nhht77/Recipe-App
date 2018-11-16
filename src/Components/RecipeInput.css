@@ -6,34 +6,51 @@
     margin: 10px;
     padding: 15px;
     border-radius: 10px;
-    border: 7px solid #2c3e50;
+    border: 7px solid #634444;
   }
-  
-  .recipe-form input[type=text] {
-      padding: 5px 8px;
+
+  .recipe-form input {
+      padding: 4px 2rem;
+      text-align: center;
       box-sizing: border-box;
+      border:none;
+      border-bottom: 1px solid #8F6C6C;
+      transition: all .3s;
+      margin: 1rem;
   }
   
+  .recipe-form input:focus {
+    box-sizing: border-box;
+    border:none;
+    border-bottom: 1px solid #634444;
+    margin: 1rem;
+    outline: none;
+}
+
+.recipe-form textarea{
+    width: 14rem;
+    height: 5rem;
+    border: 1px solid #8F6C6C;
+    outline: none;
+}
+
   .form-group {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 5px;
-  }
-  
-  .form-group input textarea {
-    margin-left: 15px;
+    margin: .5rem auto;
   }
   
   .buttons {
     color: white;
-    background-color: #2c3e50;
+    background-color: #8F6C6C;
     border-radius: 6px;
     padding: 0 10px 1px 10px;
     margin: 8px 0;
     align-self: flex-end;
     font-size: 1.1em;
+    border: none;
   }
   
   .close-button {

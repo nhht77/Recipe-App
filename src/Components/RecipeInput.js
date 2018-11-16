@@ -71,7 +71,8 @@ class RecipeInput extends Component {
         <form className="recipe-form" onSubmit={this.handleSubmit}>
             <button
                 type="button"
-                className="close-button">
+                className="close-button"
+                onClick={this.props.onClose}>
                 X
             </button>
 
