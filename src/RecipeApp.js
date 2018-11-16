@@ -3,6 +3,7 @@ import './RecipeApp.css';
 
 import NavBar from './Components/NavBar';
 import RecipeList from './Components/RecipeList';
+import RecipeInput from './Components/RecipeInput';
 
 class RecipeApp extends Component {
   constructor(props){
@@ -33,12 +34,25 @@ class RecipeApp extends Component {
       ],
       nextRecipeId: 3,
     }
+    this.handleSave = this.handleSave.bind(this);
   }
+
+  handleSave(recipe){
+    this.setState((prevState, props) => {
+      const newRecipe = {...recipe, id: this.state.nextRecipeId};
+        return {
+          nextRecipeId: this.state.nextRecipeId + 1,
+          recipe: {...this.state.recipe, newRecipe}
+      }
+    });
+  }
+
   render() {
     
     return (
       <div className="App">
         <NavBar/>
+        <RecipeInput onSave={this.handleSave}/>
         <RecipeList recipes={this.state.recipe}/>
       </div>
     );
